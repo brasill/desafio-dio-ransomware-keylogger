@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+*.key
+log.txt
+nohup.out
