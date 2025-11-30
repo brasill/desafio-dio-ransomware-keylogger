@@ -1,26 +1,43 @@
-# 🛡️ Desafio de Cibersegurança: Malware Simulation
+# Desafio DIO – Simulação de Ransomware e Keylogger (Ambiente Controlado)
 
-Projeto desenvolvido para o Bootcamp da DIO. O objetivo foi implementar um Ransomware e um Keylogger em Python para entender o funcionamento dessas ameaças e como se proteger.
+Este projeto demonstra, **em ambiente 100% seguro**, a simulação didática de:
+- Um *ransomware* simples em Python (criptografia + descriptografia).
+- Um *keylogger* simples (captura de teclas e envio opcional por e‑mail).
+- Medidas de defesa e prevenção.
 
-## 💻 Ambiente de Desenvolvimento
-Este projeto foi adaptado para rodar em **Linux (Gentoo)**, exigindo configurações específicas de ambiente e permissões diferentes do Windows.
+## 📁 Estrutura do Repositório
+```
+├── scripts/
+│   ├── ransomware.py
+│   ├── decrypt.py
+│   └── keylogger.py
+├── images/
+│   └── (capturas de tela – você adicionará)
+└── README.md
+```
 
-- **Sistema Operacional:** Gentoo Linux
-- **Linguagem:** Python 3.13
-- **Bibliotecas:** `pynput`, `cryptography`
+## 🚨 Aviso
+Este projeto é somente para fins **educacionais**, seguindo as diretrizes do curso.  
+Não execute esses códigos em máquinas de terceiros.
 
-## 📁 Estrutura do Projeto
-- `/ransomware`: Scripts de criptografia (AES) e descriptografia de arquivos.
-- `/keylogger`: Script de captura de teclas com suporte a envio de e-mail e execução em background.
+## 🔐 Ransomware Simulado
+O script `ransomware.py`:
+- Gera uma chave Fernet.
+- Criptografa arquivos de teste.
+- Exibe mensagem de “resgate” simulada.
 
-## 🔧 Desafios e Soluções (Learning Outcomes)
-1. **Ambiente Virtual (PEP 668):** Utilização de `venv` para isolar dependências do sistema (`emerge`).
-2. **Servidor Gráfico:** Configurações específicas para captura de input no X11.
-3. **Furtividade:** Execução em background via `nohup` para simular processo daemon.
+O script `decrypt.py`:
+- Utiliza a chave para restaurar os arquivos originais.
 
-## 🛡️ Prevenção e Defesa
-- **Ransomware:** Backups imutáveis e princípio do privilégio mínimo.
-- **Keylogger:** Uso de MFA (Autenticação de Dois Fatores) e EDRs comportamentais.
+## 🎧 Keylogger Simulado
+O arquivo `keylogger.py`:
+- Captura teclas pressionadas.
+- Armazena em `log.txt`.
+- Pode opcionalmente enviar o arquivo por e‑mail (comentado no código).
 
----
-*Este projeto é puramente educacional.*
+## 🛡 Defesa e Prevenção
+- Uso de antivírus.
+- Firewall configurado.
+- Execução em sandbox/VM.
+- Privilégios mínimos.
+- Conscientização do usuário.
